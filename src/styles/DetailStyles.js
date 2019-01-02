@@ -9,5 +9,11 @@ export default {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-around',
+  },
+  weekdayContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'column',
   }
 }

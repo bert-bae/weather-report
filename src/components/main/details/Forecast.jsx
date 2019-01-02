@@ -2,44 +2,11 @@ import React, {Component} from 'react';
 
 import DetailStyles from '../../../styles/DetailStyles';
 
-import {data} from '../../../TempData';
-
 export default class Forecast extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      focus: null,
-      forecast: [],
-    }
-    this.getCoreDataset = this.getCoreDataset.bind(this);
-  }
-
-  getCoreDataset = (set) => {
-    const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    const forecastData = set.daily.data;
-    forecastData.forEach((day) => {
-      let date = new Date(day.time * 1000);
-      let dayOfWeek = weekdays[date.getDay()];
-      let dayOfMonth = date.getDate();
-      let monthOfYear = months[date.getMonth()];
-      let year = date.getFullYear();
-      set.time = [date, dayOfWeek, monthOfYear, dayOfMonth, year];
-    })
-  }
-
-  componentDidMount() {
-    this.getCoreDataset(data);
-    this.setState({
-      focus: data.daily.data[0],
-      forecast: data.daily.data,
-    })
-  }
-
   render() {
     const weekdays = ['Sun', 'Mon', 'Tues', 'Wed', 'Thu', 'Fri', 'Sat'];
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    const renderForecast = this.state.forecast.map((day) => {
+    const renderForecast = this.props.data.map((day) => {
       let date = new Date(day.time * 1000);
       let dayOfWeek = weekdays[date.getDay()];
       let dayOfMonth = date.getDate();
@@ -47,11 +14,39 @@ export default class Forecast extends Component {
       let year = date.getFullYear();
       day.time = [date, dayOfWeek, monthOfYear, dayOfMonth, year];
       let timeString = `${day.time[1]} ${day.time[3]}`;
+      let temperatureAvg = Math.round((day.temperatureLow + day.temperatureHigh) / 2);
+      let icon;
+      switch (day.icon) {
+        case "rain":
+          icon = <i class="fas fa-cloud-rain"></i>;
+          break;
+        case "fog":
+          icon = <i class="fab fa-cloudversify"></i>;
+          break;
+        case "partly-cloudy-day":
+          icon = <i class="fas fa-cloud-sun"></i>;
+          break;
+        case "partly-cloudy-night":
+          icon = <i class="fas fa-cloud-sun"></i>;
+          break;
+        case "snow":
+          icon = <i class="far fa-snowflake"></i>;
+          break;
+        case "clear":
+          icon = <i class="far fa-sun"></i>;
+          break;
+        case "windy":
+          icon = <i class="fas fa-wind"></i>;
+          break;
+        default:
+          icon = <i class="far fa-sun"></i>;
+          break;
+      };
       return (
-        <div>
+        <div style={DetailStyles.weekdayContainer}>
           <p>{timeString}</p>
-          <p>{day.icon}</p>
-          <p>{day.temperatureLow} - {day.temperatureHigh}</p>
+          {icon}
+          <p>{temperatureAvg}°C</p>
         </div>
       )
     })
