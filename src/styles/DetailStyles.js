@@ -15,5 +15,16 @@ export default {
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'column',
+  },
+  hourlyForecastContainer: {
+    display: 'flex',
+    justifyContent:'space-between',
+    flexDirection:'column'
+  },
+  hourContainer: {
+    display: 'flex',
+    justifyContent:'space-between',
+    alignItems: 'center',
+    flexDirection:'row'
   }
 }
