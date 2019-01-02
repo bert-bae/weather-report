@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 
-import FooterStyle from '../styles/FooterStyles';
 import FooterStyles from '../styles/FooterStyles';
 
 export default class Footer extends Component {

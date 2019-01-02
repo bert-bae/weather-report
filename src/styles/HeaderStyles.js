@@ -2,8 +2,9 @@ export default {
   headerContainer: {
     display: 'flex',
     justifyContent: 'space-between',
+    alignItems:'center',
     padding: '20px',
-    backgroundColor: 'pink',
+    backgroundColor: '#4169E1',
   },
   headerList: {
     display: 'flex',

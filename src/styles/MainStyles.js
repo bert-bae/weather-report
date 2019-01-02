@@ -4,5 +4,6 @@ export default {
     padding: '0',
     flexDirection: 'row',
     display: 'flex',
+    height: '100%',
   }
 }

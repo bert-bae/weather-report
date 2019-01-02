@@ -6,6 +6,6 @@ export default {
     justifyContent: 'space-around',
     width: '100%',
     alignItems: 'center',
-    backgroundColor: 'pink',
+    backgroundColor: '#4169E1',
   }
 }
