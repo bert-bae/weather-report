@@ -26,21 +26,21 @@ export default class Details extends Component {
     const selectIcon = (data) => {
       switch (data) {
         case "rain":
-          return <i className="fas fa-cloud-rain"></i>;
+          return <i className="fas fa-cloud-rain" style={{color: 'grey'}}></i>;
         case "fog":
-          return <i className="fab fa-cloudversify"></i>;
+          return <i className="fab fa-cloudversify" style={{color: 'grey'}}></i>;
         case "partly-cloudy-day":
-          return <i className="fas fa-cloud-sun"></i>;
+          return <i className="fas fa-cloud-sun" style={{color: 'grey'}}></i>;
         case "partly-cloudy-night":
-          return <i className="fas fa-cloud-sun"></i>;
+          return <i className="fas fa-cloud-sun" style={{color: 'gold'}}></i>;
         case "snow":
-          return <i className="far fa-snowflake"></i>;
+          return <i className="far fa-snowflake" style={{color: 'grey'}}></i>;
         case "clear":
-          return <i className="far fa-sun"></i>;
+          return <i className="far fa-sun" style={{color: 'gold'}}></i>;
         case "windy":
-          return <i className="fas fa-wind"></i>;
+          return <i className="fas fa-wind" style={{color: 'grey'}}></i>;
         default:
-          return <i className="far fa-sun"></i>;
+          return <i className="far fa-sun" style={{color: 'gold'}}></i>;
       }
     }
 

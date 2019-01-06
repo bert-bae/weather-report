@@ -1,12 +1,8 @@
 export default {
-  pictureContainer: {
+  videoContainer: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    width: '35%',
+    width: '50%',
   },
-  textContainer: {
-    display: 'flex',
-    width: '15%',
-  }
 }

@@ -4,7 +4,6 @@ import DetailStyles from '../../../styles/DetailStyles';
 export default class HourlyForcast extends Component {
   render() {
     const hourlyData = this.props.data.slice(0, 12);
-    console.log(hourlyData);
     const renderHourly = hourlyData.map((hour) => {
       let time = this.props.convertHours(hour.time);
       let icon = this.props.selectIcon(hour.icon);
