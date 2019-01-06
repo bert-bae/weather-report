@@ -5,4 +5,8 @@ export default {
     alignItems: 'center',
     width: '50%',
   },
+  videoPlayer: {
+    position: 'fixed',
+    top: '50%',
+  }
 }

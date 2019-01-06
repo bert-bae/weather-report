@@ -6,9 +6,12 @@ import RecommendationStyles from '../../styles/RecommendationStyles';
 export default class PictureRecommendations extends Component {
   render() {
     return (
-      <div className="photo-recommendations" style={RecommendationStyles.videoContainer}>
-        <p>Picture stuff goes here</p>
-      </div>
+      <ReactPlayer
+        playing
+        url={[
+          {src: '../../videos/raining.mp4', type: 'video/mp4'},
+        ]}
+        />
     )
   }
 }
