@@ -4,6 +4,7 @@ export default {
     width: '50%',
     height: '100%',
     flexDirection: 'column',
+    padding: 15
   },
   forecastContainer: {
     display: 'flex',

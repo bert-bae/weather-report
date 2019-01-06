@@ -1,17 +1,20 @@
 import React, {Component} from 'react';
 import ReactPlayer from 'react-player';
 
-import RecommendationStyles from '../../styles/RecommendationStyles';
+import VideoStyles from '../../styles/VideoStyles';
 
-export default class PictureRecommendations extends Component {
+export default class VideoPlayer extends Component {
   render() {
     return (
-      <ReactPlayer
-        playing
-        url={[
-          {src: '../../videos/raining.mp4', type: 'video/mp4'},
-        ]}
-        />
+      <div className="video-container" style={VideoStyles.videoContainer}>
+        <ReactPlayer
+          playing
+          url={[
+            {src: './videos/raining.webm', type: 'video/webm'},
+            {src: './videos/rainingsideways.webm', type: 'video/webm'},
+          ]}
+          />
+      </div>
     )
   }
 }
